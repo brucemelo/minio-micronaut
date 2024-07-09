@@ -1,0 +1,15 @@
+### Create a bucket "my-pdfs"
+POST http://localhost:8080/make-bucket
+
+### Upload file1.pdf from resouces
+POST http://localhost:8080/
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="fileUpload"; filename="file1.pdf"
+
+< file1.pdf
+--WebAppBoundary--
+
+### Download file1.pdf
+GET http://localhost:8080/file1.pdf
